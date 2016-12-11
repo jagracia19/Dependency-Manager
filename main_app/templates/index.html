@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" 
+              href="{% static 'bootstrap.min.css' %}" />
+        <link rel="stylesheet" 
+              href="{% static 'style.css' %}" />
+        <title>Dependecy Manager</title>                
+    </head>
+    <body>
+        <h1>Dependecy Manager</h1>
+        {% if files  %}
+        <ul>
+            {% for file in files %}
+            <li>{{file.name}} {{file.hash}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>
